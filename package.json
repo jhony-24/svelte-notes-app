@@ -8,7 +8,8 @@
     "lint": "svelte-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^2.6.5"
+    "core-js": "^2.6.5",
+    "svelte-icons": "^2.1.0"
   },
   "devDependencies": {
     "@svel/cli-plugin-babel": "^0.5.0",
