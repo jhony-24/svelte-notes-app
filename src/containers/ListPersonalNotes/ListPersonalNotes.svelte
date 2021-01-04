@@ -1,16 +1,6 @@
 <script>
-import Note from "./Note.svelte";
-
-export const colors = {
-    important1 : "rgb(241, 202, 158)",
-    important2 : "rgb(241, 158, 158)",
-    important3 : "rgb(211, 158, 241)",
-    important4 : " rgb(186, 230, 243)",
-    important5 : "rgb(207, 243, 186)"
-};
-
-export let data = []
-let visibleModal = false;
+import Note from "../../components/Note.svelte";
+import { personalNotes } from "../../stores/personalNotes"
 
 </script>
 
@@ -19,14 +9,14 @@ let visibleModal = false;
         My personal notes
     </div>
     <div class="list-notes__list">
-        {#each data as e}
-        <Note {...e} />
+        {#each $personalNotes as e}
+            <Note {...e} />
         {/each}
     </div>
 </div>
 <style>
 .list-notes {
-    padding: 60px;
+    padding:var(--search-height) 60px;
     overflow-y: auto;
 }
 .list-notes__header {

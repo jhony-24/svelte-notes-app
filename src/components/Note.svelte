@@ -1,40 +1,41 @@
 <script>
+    import MdEdit from 'svelte-icons/md/MdEdit.svelte'
+    import MdSave from 'svelte-icons/md/MdSave.svelte'
+    import { fade } from "svelte/transition"
     export let note = "",id = "",date = "",color = "";
-    
     let editable = false;
     let value = note;
-
-    function saveTextEditable() {
-        alert(id);
-    }
-    function toggleEditable() {
-        if(editable) {
-            saveTextEditable();
-        }
-        editable = !editable;
-    }
+    const toggleEditable = () => editable = !editable;
 </script>
 
 
-<div class="note" style="background-color:{color}" data-note={id}>
+<div class="note" style="background-color:{color}" data-note={id} transition:fade|local>
     <div class="note__editable">
         {#if editable}
             <textarea
-                placeholder="Editar my nota..."
-                bind:value={value}
-                class="note__input--editable"
-                spellcheck="false"
-                autofocus />
-        {:else}{value}{/if}
+            placeholder="Editar my nota..."
+            bind:value={value}
+            class="note__input--editable"
+            spellcheck="false"
+            autofocus />
+        {:else}
+            {#if value != ""}
+                {value}
+            {:else}
+                Editar mi nota...
+            {/if}
+        {/if}
     </div>
     <div class="note__detail">
         <span class="note__date">{date}</span>
         <button class="note__button-edit" on:click={toggleEditable}>
-        {#if editable}
-            Guardar
-        {:else}
-            Editar
-        {/if}
+            <div class="icon">
+                {#if editable}
+                    <MdSave/>
+                {:else}
+                    <MdEdit/>
+                {/if}
+            </div>
         </button>
     </div>
 </div>
@@ -75,13 +76,17 @@
         background-color: black;
         color: white;
         border-radius: 10px;
-        padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: .8rem;
         border: none;
-        width: 80px;
         outline: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+    }
+    .note__button-edit > .icon {
+        width: 20px;
+        height: 20px;
     }
 </style>

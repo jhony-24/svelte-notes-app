@@ -1,30 +1,27 @@
 <script>
- import ListNotes from "./components/ListNotes.svelte";
- import SideBarCreator from "./components/SideBarCreator.svelte";
- let data = []
+ import ListPersonalNotes from "./containers/ListPersonalNotes/ListPersonalNotes.svelte";
+import SearchPersonalNotes from "./containers/SearchPersonalNotes/SearchPersonalNotes.svelte";
+ import SideBarCreator from "./containers/SideBarCreator/SideBarCreator.svelte";
 
-function onAddNewNote({detail:{color}}){
-  let newData = {
-    id : Math.random(),
-    note : "",
-    date : new Date().toLocaleTimeString(),
-    color
-  }
-  data = [...data,newData]
-}
 </script>
 
 <div id="app">
-  <SideBarCreator on:createnewnote={onAddNewNote} />
-  <ListNotes data={data} />
+  <SideBarCreator  />
+  <SearchPersonalNotes/>
+  <ListPersonalNotes />
 </div>
 
 <style>
+:global(:root) {
+    --sidebar-width:150px;
+    --search-height:90px;
+    --search-text-color:gray;
+}
 #app {
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: var(--sidebar-width) 1fr;
   grid-template-rows: 1fr;
 }
 :global(*) {

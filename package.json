@@ -2,6 +2,10 @@
   "name": "notes",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Jhony Vega",
+    "url": "https://github.com/jhony-24"
+  },
   "scripts": {
     "serve": "svelte-cli-service serve",
     "build": "svelte-cli-service build",

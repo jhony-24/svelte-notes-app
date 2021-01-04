@@ -1,40 +1,28 @@
 <script>
     import { createEventDispatcher } from "svelte";
-    export const colors = [
-        { color: "rgb(241, 202, 158)" },
-        { color: "rgb(241, 158, 158)" },
-        { color: "rgb(211, 158, 241)" },
-        { color: " rgb(186, 230, 243)" },
-        { color: "rgb(207, 243, 186)" }
-    ];
-
+    import { fade } from "svelte/transition";
+    import ColorOption from "./ColorOption.svelte";
+    import Tooltip from "./Tooltip.svelte";
+    export let data = [];
     let dispatch = createEventDispatcher();
-    const onColorSelected = (payload) => () => {
-        dispatch("colorselected",payload);
-    }
+    const onColorSelected = payload => () => dispatch("colorselected", payload);
 </script>
 
-<div class="list-colors">
-    {#each colors as item}
-        <span
-            class="list-colors__item"
-            style="background-color:{item.color}"
-            on:click={onColorSelected(item)} />
-    {/each}
-</div>
 <style>
-    .list-colors__item {
-        width:25px;
-        height:25px;
-        display: block;
+    .color {
         margin: 30px 0;
-        border-radius: 100%;
-        transition: transform .3s;
-    }
-    .list-colors__item:hover {
-        border:4px solid white;
-        box-shadow: 0 0 0 2px black;
-        transform: scale(1.2);
-        cursor: pointer;
     }
 </style>
+
+<div class="list-colors">
+    {#each data as item}
+        <div class="color" transition:fade>
+            <Tooltip tooltip="Color level {item.level}" w="100px" dark x="40%">
+                <ColorOption
+                    on:click={onColorSelected(item)}
+                    color={item.color}
+                    dimension="30px" />
+            </Tooltip>
+        </div>
+    {/each}
+</div>
