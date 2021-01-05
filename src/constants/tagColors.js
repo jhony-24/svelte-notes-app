@@ -1,8 +1,8 @@
 const tagColors = [
-    { color: "rgb(241, 202, 158)", level:1 },
-    { color: "rgb(241, 158, 158)", level:2 },
-    { color: "rgb(211, 158, 241)", level:3 },
-    { color: " rgb(186, 230, 243)", level:4 },
-    { color: "rgb(207, 243, 186)", level:5 }
+    { color: "rgb(241, 202, 158)", text: "Important" },
+    { color: "rgb(241, 158, 158)", text: "Completed" },
+    { color: "rgb(211, 158, 241)", text: "Working now" },
+    { color: " rgb(186, 230, 243)", text : "Information" },
+    { color: "rgb(207, 243, 186)", text: "Optional" }
 ];
 export default tagColors;

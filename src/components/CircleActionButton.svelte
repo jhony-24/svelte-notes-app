@@ -5,8 +5,8 @@
 <style>
     .action-button {
         cursor: pointer;
-        background-color: black;
-        color: white;
+        background-color: var(--background-button-add-note);
+        color: var(--text-button-add-note);
         border-radius: 10px;
         display: flex;
         align-items: center;

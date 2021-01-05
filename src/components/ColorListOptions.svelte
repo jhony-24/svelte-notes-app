@@ -17,7 +17,7 @@
 <div class="list-colors">
     {#each data as item}
         <div class="color" transition:fade>
-            <Tooltip tooltip="Color level {item.level}" w="100px" dark x="40%">
+            <Tooltip tooltip={item.text} w="100px" dark x="40%">
                 <ColorOption
                     on:click={onColorSelected(item)}
                     color={item.color}

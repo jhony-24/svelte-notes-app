@@ -33,14 +33,16 @@
 <style>
 .sidebar {
     display: flex;
-    border-right: 1px solid rgba(0,0,0,.06);
+    border-right: 1px solid rgba(15, 15, 15, 0.06);
     flex-direction: column;
     align-items: center;
+    background-color: var(--sidebar-background);
 }
 .sidebar__title {
     font-weight: bold;
     font-size: 1rem;
     margin-top: 40px;
+    color: var(--text-base-color);
 }
 .sidebar__button-add {
     margin-top: 50px;

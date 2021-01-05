@@ -36,7 +36,8 @@
     <slot />
     {#if visible}
         <span
-            class="tooltip {dark && 'dark'}"
+            class="tooltip"
+            class:dark={dark}
             transition:fade
             style="transform:translateX({x})translateY({y});width:{w};">{tooltip}</span>
     {/if}
