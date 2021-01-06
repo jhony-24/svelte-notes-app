@@ -20,12 +20,7 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build
-
-  deploy:
-    name: deploy project
-    runs-on: ubuntu-latest    
-    steps:
-      - name: Deploy project to github-pages
+      - name: deploy project
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
