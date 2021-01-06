@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: build project
+  Deploy:
+    name: Deploy project
     runs-on: ubuntu-latest
     steps:
       - name: Start build
@@ -20,7 +20,7 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build
-      - name: deploy project
+      - name: Deploy project
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
