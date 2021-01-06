@@ -1,5 +1,7 @@
 # SVELTE - NOTES APP
 
+!["./notes.PNG"](./notes.PNG)
+
 ## Project setup
 ```
 npm install
