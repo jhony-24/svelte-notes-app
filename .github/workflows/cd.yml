@@ -1,1 +1,31 @@
 name: Deploy svelte application
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: build project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install node
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install packages
+        run: npm install
+      - name: Build project
+        run: npm run build
+
+  deploy:
+    name: deploy project
+    runs-on: ubuntu-latest    
+    steps:
+      - name: Deploy project to github-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

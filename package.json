@@ -8,7 +8,7 @@
   },
   "scripts": {
     "serve": "svelte-cli-service serve",
-    "build": "svelte-cli-service build",
+    "build": "svelte-cli-service build && rimraf ./dist/**/*.map",
     "lint": "svelte-cli-service lint"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "core-js": "^2.6.5",
     "dexie": "^3.0.3",
     "eslint-plugin-svelte3": "^3.0.0",
+    "rimraf": "^3.0.2",
     "svelte-icons": "^2.1.0"
   },
   "devDependencies": {
