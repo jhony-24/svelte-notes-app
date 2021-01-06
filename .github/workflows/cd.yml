@@ -10,8 +10,8 @@ jobs:
     name: build project
     runs-on: ubuntu-latest
     steps:
-      - name: Install node
       - uses: actions/checkout@v2
+      - name: Install node
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'

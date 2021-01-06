@@ -38,12 +38,17 @@
     margin: auto;
     box-shadow: 0 20px 10px rgba(0,0,0,.05);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .modal__header {
     color: var(--text-base-color);
     padding: 20px;
 }
 .modal__body {
+    display: flex;
+    height: 100%;
+    width: 100%;
     padding: 20px;
 }
 .title {
