@@ -28,6 +28,7 @@
         font-weight: bold;
         outline: none;
         cursor: pointer;
+        color: white;
     }
 </style>
 

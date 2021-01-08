@@ -1,6 +1,8 @@
 <script>
     import IoIosSearch from 'svelte-icons/io/IoIosSearch.svelte'
-import UserDetailFloating from '../UserDetailFloating/UserDetailFloating.svelte';
+    import Switch from '../../components/Switch.svelte';
+    import UserDetailFloating from '../UserDetailFloating/UserDetailFloating.svelte';
+
 </script>
 
 <div class="search">
@@ -10,6 +12,9 @@ import UserDetailFloating from '../UserDetailFloating/UserDetailFloating.svelte'
         </div>
         <div class="search__wrapper-input">
             <input placeholder="Search in notes..." class="search__input-engine" />
+        </div>
+        <div class="search__theme">
+            <Switch />
         </div>
         <UserDetailFloating/>
     </div>
@@ -41,6 +46,9 @@ import UserDetailFloating from '../UserDetailFloating/UserDetailFloating.svelte'
     width: 100%;
     display: flex;
     margin-left: 10px;
+}
+.search__theme {
+    margin:0 20px 0 10px;
 }
 .search__input-engine {
     color: var(--search-text-color);

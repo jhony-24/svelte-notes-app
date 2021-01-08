@@ -17,7 +17,7 @@
             bind:value={value}
             class="note__input--editable"
             spellcheck="false"
-            autofocus />
+             />
         {:else}
             {#if value != ""}
                 {value}

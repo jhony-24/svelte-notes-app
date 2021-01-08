@@ -18,6 +18,7 @@
     --search-text-color: gray;
     --preload-background-image: rgba(0, 0, 0, 0.05);
     --primary-color:rgb(230,60,100);
+    --primary-color-00:rgb(241, 204, 213);
     --text-base-color: black;
     --app-background: white;
     --background-button-add-note:black;
