@@ -2,6 +2,12 @@
     import IoIosSearch from 'svelte-icons/io/IoIosSearch.svelte'
     import Switch from '../../components/Switch.svelte';
     import UserDetailFloating from '../UserDetailFloating/UserDetailFloating.svelte';
+    import {  themeApplication } from "../../stores/themeApplication"
+
+    $: isDark = $themeApplication === "dark";
+    const onChangeThemeApplication = (e) => {
+        themeApplication.setTheme(e.currentTarget.checked ? "dark" : "light");
+    }
 
 </script>
 
@@ -14,7 +20,7 @@
             <input placeholder="Search in notes..." class="search__input-engine" />
         </div>
         <div class="search__theme">
-            <Switch />
+            <Switch on:change={onChangeThemeApplication} isChecked={isDark} />
         </div>
         <UserDetailFloating/>
     </div>

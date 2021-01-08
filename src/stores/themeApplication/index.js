@@ -8,13 +8,13 @@ function themeApplicationStore() {
    */
   const setTheme = (theme) => set(theme);
   const setLightTheme = () => setTheme("light");
-  const setDarkTheme = () => setTheme("dark")  
+  const setDarkTheme = () => setTheme("dark");
 
   return {
     subscribe,
     setTheme,
     setLightTheme,
-    setDarkTheme
+    setDarkTheme,
   };
 }
 

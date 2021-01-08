@@ -1,8 +1,6 @@
 <script>
-    export let checked = false;
-    let statusChecked = checked;
-
-    console.log(statusChecked)
+    export let isChecked = false;
+    let statusChecked = isChecked;
 
 </script>
 <style>
@@ -12,7 +10,7 @@
 .switch {
     background-color: rgb(219, 219, 219);
     display: inline-block;
-    width: 50px;
+    width: 40px;
     height: 20px;
     border-radius: 10px;
     position: relative;
@@ -29,8 +27,8 @@
 .switch__active {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,.09);
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     border-radius: 100%;
     display: block;
     position: absolute;
