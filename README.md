@@ -2,6 +2,8 @@
 
 !["./notes.PNG"](./notes.PNG)
 
+[DEMO](https://jhony-24.github.io/svelte-notes-app/)
+
 ## Project setup
 ```
 npm install
