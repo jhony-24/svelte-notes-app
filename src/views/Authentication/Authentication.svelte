@@ -1,4 +1,5 @@
 <script>
+import MainAuthenticationSection from "./MainAuthenticationSection/MainAuthenticationSection.svelte";
 import SidebarMessage from "./SidebarMessage/SidebarMessage.svelte";
 
 
@@ -6,6 +7,7 @@ import SidebarMessage from "./SidebarMessage/SidebarMessage.svelte";
 
 <div id="app">
     <SidebarMessage />
+    <MainAuthenticationSection/>
 </div>
 <style>
     #app {
@@ -13,5 +15,6 @@ import SidebarMessage from "./SidebarMessage/SidebarMessage.svelte";
         display:flex;
         width:100%;
         --sidebar-width:280px;
+        --main-width:100%;
     }
 </style>
