@@ -15,10 +15,16 @@
     const onCreateNewNote = () => {
         let data = {
             note:value,
-            color:colorSelected
+            color:colorSelected,
+            date : new Date().toLocaleString()
         }
-        personalNotes.addNote(data);
-        createNoteByModal.closeModal();
+        if(data.color !== ""){
+            personalNotes.addNote(data);
+            createNoteByModal.closeModal();
+        }
+        else {
+            alert("Choose a tag color")
+        }
     }
 
     createNoteByModal.isVisible(isVisible => isModalVisible = isVisible);
@@ -48,7 +54,7 @@
         align-items: center;   
     }
     .color-option__text {
-        color: var(--text-base-color);
+        color: var(--text-input-base-color);
         display: block;
         margin-top: 10px;
         font-size: .9rem;
@@ -63,7 +69,7 @@
         padding: 20px;
         font-size: 1rem;
         height: 100%;
-        color: white;
+        color: var(--text-input-base-color);
         outline: none;
     }
     .detail__button-create {
@@ -96,7 +102,7 @@
                     </div>
                 {/each}
             </div>
-            <textarea bind:value={value} class="input__type-note" placeholder="Type a note..." ></textarea>
+            <textarea bind:value={value} class="input__type-note" placeholder="Type a note..." spellcheck="false" ></textarea>
             <button disabled={isEmptyValue} on:click={onCreateNewNote} class="detail__button-create" >Create note</button>
         </div>
     </Modal>

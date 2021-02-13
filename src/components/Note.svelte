@@ -42,7 +42,7 @@
 <style>
     .note {
         border-radius: 10px;
-        color: black;
+        color: var(--text-base-color);
         height: 220px;
         padding: 20px;
         display: flex;
