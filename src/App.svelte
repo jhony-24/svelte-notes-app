@@ -29,7 +29,6 @@ import ScreenLoading from "./components/ScreenLoading.svelte";
   {:then AuthenticationComponentSuccess} 
     <AuthenticationComponentSuccess/>
   {/await}
-  <AsyncAuthentication/>
 {/if}
 
 <style>
@@ -62,5 +61,14 @@ import ScreenLoading from "./components/ScreenLoading.svelte";
     --backdrop-modal-background: rgba(20, 20, 20, 0.7);
     --close-button-background: rgb(88, 88, 88);
     --close-button-text: rgb(206, 206, 206);
+  }
+  :global(*) {
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  :global(body, html) {
+      height: 100%;
   }
 </style>

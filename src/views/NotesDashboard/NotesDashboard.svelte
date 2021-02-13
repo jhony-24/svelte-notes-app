@@ -20,15 +20,6 @@
       grid-template-rows: 1fr;
       background-color: var(--app-background);
     }
-    :global(*) {
-      font-family: Arial, Helvetica, sans-serif;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    :global(body, html) {
-      height: 100%;
-    }
   </style>
   
   <div id="app">

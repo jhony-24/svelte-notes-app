@@ -16,8 +16,8 @@ export const deleteAccount = (accountId) => {
 export const verifyIsLogged = async () => {
     const localData = JSON.parse(localStorage.getItem("user") || "{}");
     const data = await db.accounts.where({
-        id : localData.id,
-        email : localData.email
+        id : localData.id || 0,
+        email : localData.email || ""
     }).first();
     return {
         data : data ? data : {},
