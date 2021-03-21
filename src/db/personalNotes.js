@@ -13,6 +13,9 @@ export const addNewNote = async ({note,color,date}) => {
     return id;
 }
 
+export const removeNoteById = (noteId) => {
+    return notes.delete(noteId);
+}
 
 export const getAllNotes = () => {
     return notes.toArray()

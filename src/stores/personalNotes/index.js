@@ -1,22 +1,27 @@
 import { writable } from "svelte/store";
-import { getAllNotes, addNewNote } from "../../db/personalNotes"
+import { getAllNotes, addNewNote } from "../../db/personalNotes";
 
 function personalNotesStore() {
-  const { subscribe, update,set } = writable([]);
+  const { subscribe, update, set } = writable([]);
+
+  const getNotes = () => {
+    getAllNotes().then((notes) => {
+      set(notes);
+    });
+  }
 
   const addNote = (payload) => {
-    addNewNote(payload).then(id=> {
-      update((prevState) => [...prevState, {...payload,id}]);
+    addNewNote(payload).then((id) => {
+      update((prevState) => [...prevState, { ...payload, id }]);
     });
   };
-
-  getAllNotes().then(notes => {
-    set(notes);
-  })
+  
+  getNotes()
 
   return {
     subscribe,
     addNote,
+    getNotes
   };
 }
 

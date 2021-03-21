@@ -14,6 +14,10 @@ export const verifyIfExistsAccount = async ({ username, email }) => {
     return false;
 };
 
+export const logOut = () => {
+    localStorage.removeItem("user");
+    location.reload();
+}
 
 export const deleteAccount = (accountId) => {
    return accounts.where("id").anyOf(accountId).delete();
