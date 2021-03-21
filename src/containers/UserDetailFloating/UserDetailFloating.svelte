@@ -1,6 +1,11 @@
 <script>
 import Avatar from "../../components/Avatar.svelte";
+import { userAccount } from "../../stores/userAccount"
 
+    let username = "";
+    userAccount.subscribe(e => {
+        username = e.username;
+    })
 </script>
 <style>
     .wrapper {
@@ -18,7 +23,7 @@ import Avatar from "../../components/Avatar.svelte";
 </style>
 <div class="wrapper">
     <span class="name"> 
-        Jhony Vega
+        {username}
     </span>
     <div class="avatar">
         <Avatar image="" alt="" dimension={40} />

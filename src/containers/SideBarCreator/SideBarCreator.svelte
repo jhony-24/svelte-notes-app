@@ -9,7 +9,6 @@
     const showTagColorOptions = () => selectColorVisible = true;
     const onColorSelected = ({detail:{color}}) => {
         personalNotes.addNote({
-            id : Math.random(),
             note : "",
             date : new Date().toLocaleTimeString(),
             color,
